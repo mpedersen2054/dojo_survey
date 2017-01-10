@@ -7,7 +7,42 @@
 <body>
 
   <div class="container">
-    <h1>hello thur</h1>
+    <form action="/survey" method="POST">
+      <div class="inp-row">
+        <div class="desc">Your Name:</div>
+        <div class="inp">
+          <input type="text" name="name">
+        </div>
+      </div>
+      <div class="inp-row">
+        <div class="desc">Dojo Location:</div>
+        <div class="inp">
+          <select name="location">
+            <option value="seattle">Seattle</option>
+            <option value="chicago">Chicago</option>
+          </select>
+        </div>
+      </div>
+      <div class="inp-row">
+        <div class="desc">Favorite Language:</div>
+        <div class="inp">
+          <select name="location">
+            <option value="seattle">Seattle</option>
+            <option value="chicago">Chicago</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inp-row">
+        <div class="desc">Comment (optional):</div>
+        <textarea name="comment"></textarea>
+      </div>
+
+      <div class="submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
   </div>
 
 </body>
