@@ -62,3 +62,31 @@
   background-color: #4CEDCE;
   color: #fff;
 }
+
+
+/* result page */
+
+.result-page {
+  width: 600px;
+}
+
+.result-page h1 {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.data-row {
+  width: 100%;
+  display: block;
+  padding: 20px 0;
+}
+
+.data-row .desc {
+  width: 50%;
+  float: left;
+}
+
+.data-row .info {
+  width: 50%;
+  float: left;
+}

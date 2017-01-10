@@ -11,5 +11,9 @@ def new_survey():
   print "hello there"
   # name, location, fav_lang, comment = request.form
 
+@app.route('/result')
+def result():
+  return render_template('result.html')
+
 
 app.run(debug=True)
