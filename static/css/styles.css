@@ -53,6 +53,7 @@
 
 .submit-btn {
   text-align: right;
+  cursor: pointer;
 }
 
 .submit-btn input {
