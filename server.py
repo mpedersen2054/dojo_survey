@@ -1,10 +1,7 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 
 app = Flask(__name__)
 app.secret_key = 'asecretkey'
-
-# populate data from form request in here
-form_info = {}
 
 @app.route('/')
 def index():
@@ -20,17 +17,33 @@ def index():
 
 @app.route('/survey', methods=['POST'])
 def new_survey():
-  # print "hello there"
   session['name']     = request.form['name']
   session['location'] = request.form['location']
   session['favlang']  = request.form['favlang']
   session['comment']  = request.form['comment']
-  return redirect('/result')
+  any_errors          = False
+
+  if (len(session['name']) < 1):
+    flash('Name field was not long enough.')
+    any_errors = True
+
+  if (len(session['comment']) < 1):
+    flash('Comment field was not long enough.')
+    any_errors = True
+
+  if (len(session['comment']) > 120):
+    flash('Comments must be less than 120 characters.')
+    any_errors = True
+
+  if not any_errors:
+    return redirect('/result')
+  else:
+    return redirect('/')
 
 @app.route('/result')
 def result():
   # print form_info
-  return render_template('result.html', data=form_info)
+  return render_template('result.html')
 
 
 app.run(debug=True)
