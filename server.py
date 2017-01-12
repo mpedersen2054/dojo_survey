@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -20,7 +20,7 @@ def new_survey():
 
 @app.route('/result')
 def result():
-  print form_info
+  # print form_info
   return render_template('result.html', data=form_info)
 
 
